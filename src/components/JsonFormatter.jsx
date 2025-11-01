@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Wand2, Minimize2, ArrowLeftRight, Trash2 } from 'lucide-react';
 import yaml from 'js-yaml';
 
 export default function JsonFormatter() {
@@ -87,11 +88,11 @@ export default function JsonFormatter() {
           onChange={(e) => setInput(e.target.value)}
         />
         <div className="flex flex-wrap gap-2">
-          <button onClick={format}>Format</button>
-          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800" onClick={minify}>Minify</button>
-          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800" onClick={toYAML}>To YAML</button>
-          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800" onClick={fromYAML}>From YAML</button>
-          <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={clearAll}>Clear</button>
+          <button onClick={format} className="inline-flex items-center gap-2"><Wand2 className="w-4 h-4" /> Format</button>
+          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 inline-flex items-center gap-2" onClick={minify}><Minimize2 className="w-4 h-4" /> Minify</button>
+          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 inline-flex items-center gap-2" onClick={toYAML}><ArrowLeftRight className="w-4 h-4" /> To YAML</button>
+          <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 inline-flex items-center gap-2" onClick={fromYAML}><ArrowLeftRight className="w-4 h-4" /> From YAML</button>
+          <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700 inline-flex items-center gap-2" onClick={clearAll}><Trash2 className="w-4 h-4" /> Clear</button>
         </div>
         {error && (
           <div className="mt-2 text-sm text-red-400 border border-red-900 bg-red-950/40 p-2 rounded">

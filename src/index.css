@@ -5,6 +5,11 @@ html, body, #root { @apply h-full m-0; }
 
 /* Light defaults */
 body { @apply bg-zinc-50 text-zinc-900 antialiased; }
+.light-gradient {
+  background-image:
+    radial-gradient(600px 300px at 0% 0%, rgba(59,130,246,0.08), transparent 60%),
+    radial-gradient(600px 300px at 100% 100%, rgba(16,185,129,0.08), transparent 60%);
+}
 .card { @apply bg-white border border-zinc-200 rounded-lg shadow-sm; }
 input, textarea, select {
   @apply bg-white text-zinc-900 border border-zinc-300 rounded-md outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500/40 placeholder-zinc-500;
@@ -12,10 +17,22 @@ input, textarea, select {
 
 /* Dark overrides */
 .dark body { @apply bg-zinc-950 text-zinc-100; }
+.dark .dark-gradient {
+  background-image:
+    radial-gradient(600px 300px at 0% 0%, rgba(59,130,246,0.12), transparent 60%),
+    radial-gradient(600px 300px at 100% 100%, rgba(168,85,247,0.10), transparent 60%);
+}
 .dark .card { @apply bg-zinc-900 border-zinc-800; }
 .dark input, .dark textarea, .dark select {
   @apply bg-zinc-900 text-zinc-100 border-zinc-800 focus:ring-blue-500/50 focus:border-blue-500/40 placeholder-zinc-500;
 }
+
+/* Accent gradient utilities */
+.accent-json { background-image: linear-gradient(to right, #2563eb, #06b6d4); }
+.accent-markdown { background-image: linear-gradient(to right, #10b981, #a3e635); }
+.accent-commit { background-image: linear-gradient(to right, #f59e0b, #f43f5e); }
+.accent-snippets { background-image: linear-gradient(to right, #8b5cf6, #ec4899); }
+.accent-diff { background-image: linear-gradient(to right, #6366f1, #22d3ee); }
 
 /* Links */
 a { @apply text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline; }

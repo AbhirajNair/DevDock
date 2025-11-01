@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Play, ArrowLeftRight, Trash2 } from 'lucide-react';
 
 function isObject(v) {
   return v && typeof v === 'object' && !Array.isArray(v);
@@ -53,6 +54,9 @@ export default function JsonDiff() {
   const [b, setB] = useState('');
   const [error, setError] = useState('');
   const [diff, setDiff] = useState([]);
+  const [showAdded, setShowAdded] = useState(true);
+  const [showRemoved, setShowRemoved] = useState(true);
+  const [showChanged, setShowChanged] = useState(true);
 
   useEffect(() => {
     const sa = localStorage.getItem('devdock_diff_a');
@@ -87,6 +91,9 @@ export default function JsonDiff() {
   const clearAll = () => { setA(''); setB(''); setDiff([]); setError(''); };
 
   const hasDiff = useMemo(() => diff.length > 0, [diff]);
+  const filtered = useMemo(() => diff.filter(d =>
+    (d.type === '+' && showAdded) || (d.type === '-' && showRemoved) || (d.type === '~' && showChanged)
+  ), [diff, showAdded, showRemoved, showChanged]);
 
   return (
     <div className="flex flex-col gap-4">
@@ -108,10 +115,15 @@ export default function JsonDiff() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        <button onClick={compare}>Compare</button>
-        <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800" onClick={swap}>Swap</button>
-        <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={clearAll}>Clear</button>
+      <div className="flex flex-wrap gap-2 items-center">
+        <button onClick={compare} className="inline-flex items-center gap-2"><Play className="w-4 h-4"/> Compare</button>
+        <button className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800 inline-flex items-center gap-2" onClick={swap}><ArrowLeftRight className="w-4 h-4"/> Swap</button>
+        <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700 inline-flex items-center gap-2" onClick={clearAll}><Trash2 className="w-4 h-4"/> Clear</button>
+        <div className="ml-auto flex items-center gap-3 text-sm">
+          <label className="inline-flex items-center gap-1"><input type="checkbox" checked={showAdded} onChange={(e) => setShowAdded(e.target.checked)} /> Added</label>
+          <label className="inline-flex items-center gap-1"><input type="checkbox" checked={showRemoved} onChange={(e) => setShowRemoved(e.target.checked)} /> Removed</label>
+          <label className="inline-flex items-center gap-1"><input type="checkbox" checked={showChanged} onChange={(e) => setShowChanged(e.target.checked)} /> Changed</label>
+        </div>
       </div>
 
       {error && (
@@ -121,18 +133,27 @@ export default function JsonDiff() {
       <div className="card p-3">
         {!hasDiff && <div className="text-sm text-zinc-400">No differences found or not compared yet.</div>}
         {hasDiff && (
-          <pre className="text-sm whitespace-pre-wrap break-words">
-            {diff.map((d, i) => {
-              const color = d.type === '+' ? 'text-green-400' : d.type === '-' ? 'text-red-400' : 'text-yellow-300';
-              const label = d.type === '+' ? '+' : d.type === '-' ? '-' : '~';
-              const val = d.type === '~' ? `${formatValue(d.a)} -> ${formatValue(d.b)}` : formatValue(d.type === '+' ? d.b : d.a);
-              return (
-                <div key={i} className={color}>
-                  {label} {d.path}: {val}
-                </div>
-              );
-            })}
-          </pre>
+          <div className="overflow-auto">
+            <div className="grid grid-cols-3 gap-2 text-sm font-medium mb-2">
+              <div>Path</div>
+              <div className="text-right">A</div>
+              <div>B</div>
+            </div>
+            <div className="space-y-2 text-sm">
+              {filtered.map((d, i) => {
+                const rowBg = d.type === '+' ? 'bg-green-950/30' : d.type === '-' ? 'bg-red-950/30' : 'bg-yellow-950/20';
+                const aVal = d.type === '+' ? '' : formatValue(d.a);
+                const bVal = d.type === '-' ? '' : formatValue(d.b);
+                return (
+                  <div key={i} className={`grid grid-cols-3 gap-2 p-2 rounded ${rowBg}`}>
+                    <div className="break-words font-mono">{d.path}</div>
+                    <pre className="text-right whitespace-pre-wrap break-words font-mono">{aVal}</pre>
+                    <pre className="whitespace-pre-wrap break-words font-mono">{bVal}</pre>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         )}
       </div>
     </div>

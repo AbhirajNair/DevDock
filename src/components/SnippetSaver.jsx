@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Download, Upload, Save, Eraser, Trash2 } from 'lucide-react';
 
 export default function SnippetSaver() {
   const [title, setTitle] = useState('');
@@ -96,8 +97,8 @@ export default function SnippetSaver() {
   return (
     <div className="grid md:grid-cols-2 gap-4">
       <div className="md:col-span-2 flex flex-wrap gap-2 mb-2">
-        <button className="bg-green-600 hover:bg-green-500 border-green-500/20" onClick={exportSnippets}>Export</button>
-        <button className="bg-blue-600" onClick={() => fileInputRef.current?.click()}>Import</button>
+        <button className="bg-green-600 hover:bg-green-500 border-green-500/20 inline-flex items-center gap-2" onClick={exportSnippets}><Download className="w-4 h-4"/> Export</button>
+        <button className="bg-blue-600 inline-flex items-center gap-2" onClick={() => fileInputRef.current?.click()}><Upload className="w-4 h-4"/> Import</button>
         <input ref={fileInputRef} type="file" accept="application/json" className="hidden" onChange={importSnippets} />
         <div className="ml-auto flex items-center gap-2">
           <input className="w-56" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search title, code, tags" />
@@ -111,8 +112,8 @@ export default function SnippetSaver() {
         <label className="text-sm text-zinc-400">Tags (comma-separated)</label>
         <input value={tags} onChange={(e) => setTags(e.target.value)} placeholder="e.g. react, hooks, api" />
         <div className="flex gap-2">
-          <button onClick={add}>Save Snippet</button>
-          <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700" onClick={() => { setTitle(''); setCode(''); }}>Clear</button>
+          <button onClick={add} className="inline-flex items-center gap-2"><Save className="w-4 h-4"/> Save Snippet</button>
+          <button className="bg-zinc-800 border-zinc-700 hover:bg-zinc-700 inline-flex items-center gap-2" onClick={() => { setTitle(''); setCode(''); }}><Eraser className="w-4 h-4"/> Clear</button>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -134,7 +135,7 @@ export default function SnippetSaver() {
                     </span>
                   )}
                 </div>
-                <button className="bg-red-600 hover:bg-red-500 border-red-500/20" onClick={() => remove(s.id)}>Delete</button>
+                <button className="bg-red-600 hover:bg-red-500 border-red-500/20 inline-flex items-center gap-2" onClick={() => remove(s.id)}><Trash2 className="w-4 h-4"/> Delete</button>
               </div>
               <div className="scroll-panel max-h-56 rounded-md border border-zinc-800">
                 <Suspense fallback={<pre className="p-3 text-sm whitespace-pre-wrap">{s.code}</pre>}>
