@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* App shell baseline */
+html, body, #root { @apply h-full m-0; }
+
+/* Light defaults */
+body { @apply bg-zinc-50 text-zinc-900 antialiased; }
+.card { @apply bg-white border border-zinc-200 rounded-lg shadow-sm; }
+input, textarea, select {
+  @apply bg-white text-zinc-900 border border-zinc-300 rounded-md outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500/40 placeholder-zinc-500;
+}
+
+/* Dark overrides */
+.dark body { @apply bg-zinc-950 text-zinc-100; }
+.dark .card { @apply bg-zinc-900 border-zinc-800; }
+.dark input, .dark textarea, .dark select {
+  @apply bg-zinc-900 text-zinc-100 border-zinc-800 focus:ring-blue-500/50 focus:border-blue-500/40 placeholder-zinc-500;
+}
+
+/* Links */
+a { @apply text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline; }
+.dark a { @apply text-blue-400 hover:text-blue-300; }
+
+/* Inputs */
+input, textarea, select {
+  @apply bg-zinc-900 text-zinc-100 border border-zinc-800 rounded-md outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/40 placeholder-zinc-500;
+}
+
+button { @apply inline-flex items-center justify-center px-3 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none transition-colors border border-blue-500/20; }
+
+/* Utility */
+.scroll-panel {
+  @apply overflow-auto;
+}
