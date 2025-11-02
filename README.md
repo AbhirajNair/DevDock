@@ -129,3 +129,11 @@ MIT
 ---
 
 Made with ❤️ for OpenVerse Hackathon
+
+
+---
+
+## 🎥 Project Demo
+
+Watch the full demo video of **DevDock+** here:  
+[▶️ Video Demonstration](https://drive.google.com/file/d/1tmv5Pov3bqbBruIb__ydttGfWcBuXig2/view?usp=drive_link)
