@@ -118,8 +118,6 @@ Description: add YAML conversion feature
 
 ---
 
----
-
 ## 🧮 Step 6: Testing the JSON Diff Tool  
 
 **🎯 Objective:**  
@@ -169,3 +167,4 @@ B → {"name":"DevDock+","version":"1.1","offline":true}
 - App installs successfully as a PWA.  
 - All tools work seamlessly in offline mode.  
 - Data added or modified offline syncs properly once reconnected.  
+
