@@ -1,6 +1,24 @@
-# DevDock+ – Open Source Developer Toolkit
+<div align="center">
+  
+# 🚀 DevDock+  
+### Open Source Developer Toolkit  
 
-A modern, offline-capable developer toolkit built with React + Vite and TailwindCSS. Includes JSON utilities, Markdown preview, a Conventional Commit generator, a snippet manager with syntax highlighting, and JSON Diff — all running entirely in the browser.
+A lightweight, offline-capable **React (Vite)** web app that bundles essential developer utilities —  
+**JSON Formatter**, **Markdown Previewer**, **Commit Message Generator**, **Code Snippet Saver**, and **JSON Diff Checker** —  
+all in one clean, minimal, and responsive interface.  
+
+[![React](https://img.shields.io/badge/React-18.0-blue?logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Build%20Tool-purple?logo=vite)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PWA](https://img.shields.io/badge/PWA-Ready-green?logo=googlechrome&logoColor=white)](https://web.dev/progressive-web-apps/)
+[![Made with ❤️ for OpenVerse Hackathon](https://img.shields.io/badge/Made%20with%20%E2%9D%A4-OpenVerse%20Hackathon-red)](#)
+
+
+</div>
+
+---
+
 
 ## ✨ Features
 
