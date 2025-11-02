@@ -1,23 +1,35 @@
 <div align="center">
-  
-# 🚀 DevDock+  
-### Open Source Developer Toolkit  
 
-A lightweight, offline-capable **React (Vite)** web app that bundles essential developer utilities —  
-**JSON Formatter**, **Markdown Previewer**, **Commit Message Generator**, **Code Snippet Saver**, and **JSON Diff Checker** —  
-all in one clean, minimal, and responsive interface.  
+<img src="https://img.shields.io/badge/DevDock%2B-Open%20Source%20Developer%20Toolkit-18181b?style=for-the-badge&logo=react&logoColor=61DAFB" alt="DevDock+ Banner">
 
-[![React](https://img.shields.io/badge/React-18.0-blue?logo=react)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-Build%20Tool-purple?logo=vite)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PWA](https://img.shields.io/badge/PWA-Ready-green?logo=googlechrome&logoColor=white)](https://web.dev/progressive-web-apps/)
-[![Made with ❤️ for OpenVerse Hackathon](https://img.shields.io/badge/Made%20with%20%E2%9D%A4-OpenVerse%20Hackathon-red)](#)
+### ⚙️ A Modern Developer Toolkit — Built with React + Vite + TailwindCSS  
+#### Lightweight • Offline-Ready • Beautifully Minimal
 
+---
+
+**DevDock+** is an all-in-one browser-based toolkit for developers —  
+featuring **JSON Formatter**, **Markdown Previewer**, **Commit Message Generator**,  
+**Code Snippet Saver**, and **JSON Diff Checker**, all running entirely in the browser with offline support.
+
+🧠 Built for productivity.  
+🌐 Works fully offline (PWA).  
+🎨 Styled with TailwindCSS v4.  
+💾 Data persisted via localStorage.  
+🖤 Made with love for **OpenVerse Hackathon**.
+
+---
+
+[![React](https://img.shields.io/badge/React-18.0-61DAFB?logo=react&logoColor=white&style=flat-square)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?logo=vite&logoColor=white&style=flat-square)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?logo=tailwind-css&logoColor=white&style=flat-square)](https://tailwindcss.com/)
+[![PWA Ready](https://img.shields.io/badge/PWA-Ready-brightgreen?logo=googlechrome&logoColor=white&style=flat-square)](https://web.dev/progressive-web-apps/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
 </div>
 
 ---
+
+
 
 
 ## ✨ Features
