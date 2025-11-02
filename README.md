@@ -12,9 +12,7 @@ A modern, offline-capable developer toolkit built with React + Vite and Tailwind
 - **Settings**: Light/Dark theme toggle (persisted), Clear Data, Global Backup/Restore (all `devdock_` keys).
 - **PWA**: Installable and works offline (service worker + SPA fallback).
 
-## 🖼️ Screenshots
 
-> Add screenshots/GIFs here (desktop + mobile). For example: `docs/screenshot-*.png`
 
 ## 🧱 Tech Stack
 
